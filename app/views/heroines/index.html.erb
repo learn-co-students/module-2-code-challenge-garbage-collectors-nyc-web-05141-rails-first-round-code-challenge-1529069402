@@ -3,8 +3,26 @@
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<!-- Note: wasn't sure if it should display name or super_name. "link_to heroine.name" if real name is preferred -->
+
+
+
+<!-- <h3>Or filter your search by power:</h3> -->
+
+<!--
+<! Attempting index here: -->
+<!-- <h1>Attempting filter here</h1> -->
+
+<%## form_tag '/heroines', :method => :get do %>
+
+  <!-- <label><strong>"Select a power to filter"</strong></label>
+  <%## collection_select :power, :id, @powers, :id, :name  %>
+
+  <button type="submit">Search</button> -->
+<%# end %>
