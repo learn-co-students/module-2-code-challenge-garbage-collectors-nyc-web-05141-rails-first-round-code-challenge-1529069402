@@ -1,9 +1,15 @@
 <h2>All Heroines</h2>
+<h1><%= flash[:notice] %><br></h1>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:power_name, "Search for:") %>
+  <%= text_field_tag(:power_name) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>

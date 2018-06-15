@@ -1,0 +1,12 @@
+<h1>New Heroine Creator</h1>
+<h2> <%= flash[:notice] %> <%= @heroine.errors.full_messages[0] if !@heroine.errors.nil? %> </h2>
+<%= form_for @heroine do |f|%>
+<%= f.label :name %>
+<%= f.text_field :name %><br><br>
+<%= f.label :super_name, "Super name" %>
+<%= f.text_field :super_name %><br><br>
+<%= f.label :power_id, "Power" %>
+<%= f.collection_select :power_id, @all_powers, :id, :name %><br><br>
+
+<%= f.submit "Create New Heroine" %>
+<% end %>
