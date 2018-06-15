@@ -1,22 +1,18 @@
 class HeroinesController < ApplicationController
   def index
-    @heroines = Heroine.all
+    @heroines = Heroine.search(params[:search])
+
+      if @heroines.present?
+      @heroines
+      else
+        flash[:notice]="Ain't Heroines with that SuperPowa!"
+        @heroines = Heroine.all
+      end
+
   end
 
   def show
     @heroine = find_heroine
-  end
-
-  def search
-    @heroines = Heroine.all.select { |heroine|  heroine.power.name == params[:power_name]  }
-    if @heroines.present?
-      flash[:notice]="You got them!"
-      render :index
-    else
-      flash[:notice]="Ain't Heroines with that SuperPowa!"
-      @heroines = Heroine.all
-      render :index
-    end
   end
 
   def new
@@ -36,6 +32,11 @@ class HeroinesController < ApplicationController
     end
   end
 
+  def destroy
+    find_heroine.destroy
+    redirect_to heroines_path
+  end
+
 private
 
   def find_heroine
@@ -43,7 +44,7 @@ private
   end
 
   def heroine_params
-    params.require(:heroine).permit(:name, :super_name, :power_id, :power_name)
+    params.require(:heroine).permit(:name, :super_name, :power_id)
   end
 
 end

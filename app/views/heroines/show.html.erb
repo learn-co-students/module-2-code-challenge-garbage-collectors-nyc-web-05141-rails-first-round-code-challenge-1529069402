@@ -5,3 +5,7 @@
 <h1>Name: <%= @heroine.name %></h1>
 <h3>Super name: <%= @heroine.super_name %></h3>
 <h3>Power: <%= link_to @heroine.power.name, power_path(@heroine.power) %></h3>
+
+<%= form_for @heroine, method: :delete do |f| %>
+<%= f.submit "Delete" %>
+<% end %>
