@@ -1,0 +1,15 @@
+<% if @heroine.errors.any? %>
+  <% @heroine.errors.full_messages.each do |message| %>
+    <p><%=message%></p>
+  <% end %>
+<% end %>
+
+<%=form_for @heroine do |form| %>
+  <%= form.label :name %> <br>
+  <%= form.text_field :name %> <br>
+  <%= form.label :super_name %> <br>
+  <%= form.text_field :super_name %> <br>
+  <%= form.label :power_id, "Power" %> <br>
+  <%= form.collection_select :power_id, @powers, :id, :name, include_blank: "Select one:" %>
+  <%= form.submit %>
+<% end %>

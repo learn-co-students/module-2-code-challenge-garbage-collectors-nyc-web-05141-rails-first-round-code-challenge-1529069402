@@ -1,0 +1,2 @@
+Powers HAVE MANY Heroines
+Heroines HAVE ONE Power
