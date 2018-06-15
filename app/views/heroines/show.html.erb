@@ -1,0 +1,17 @@
+<h1><%=@heroine.name%></h1>
+
+<%=link_to 'Edit', edit_heroine_path(@heroine) %>
+|
+<%=link_to 'Delete', @heroine, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<h3>Heroine Name:
+</h3>
+<%=@heroine.name %>
+
+<h3>Super Name:
+</h3>
+<%=@heroine.super_name %>
+
+<h3>Power:
+</h3>
+<%=link_to @heroine.power.name, power_path %>
