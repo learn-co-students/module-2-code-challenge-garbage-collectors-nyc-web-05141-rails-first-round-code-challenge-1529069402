@@ -1,8 +1,9 @@
 <h2>All Heroines</h2>
-<%= form_tag heroine_search_path, method: "get"%>
+<%= form_tag heroine_search_path, method: "get" do%>
 <p>Enter a Power Name: </p>
 <%= text_field_tag 'power[name]' %>
 <%= submit_tag 'Search' %>
+<% end %> 
 
 <ul>
   <% @heroines.each do |heroine| %>

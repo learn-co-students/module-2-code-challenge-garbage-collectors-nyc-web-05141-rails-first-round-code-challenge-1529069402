@@ -5,6 +5,7 @@ class HeroinesController < ApplicationController
 
   def show
     @heroine = Heroine.find_by(id: params[:id])
+    @heroines = Heroine.all
   end
 
   def new

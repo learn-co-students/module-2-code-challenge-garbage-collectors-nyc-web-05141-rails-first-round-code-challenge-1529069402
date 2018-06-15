@@ -1,3 +1,7 @@
 <p>Name: <%=@heroine.name %></p>
 <p> Super Name: <%=@heroine.super_name %>
 <p> Power: <%= link_to @heroine.power.name, power_path(@heroine.power)%>
+
+<%= form_tag heroines_path, method: 'get' do |form| %>
+<%= submit_tag "Return to Heroines List" %>
+<% end %>
