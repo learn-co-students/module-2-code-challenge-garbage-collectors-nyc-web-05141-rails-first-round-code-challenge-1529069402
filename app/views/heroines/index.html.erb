@@ -1,5 +1,5 @@
 <h2>All Heroines</h2>
-<h1><%= flash[:notice] %><br></h1>
+<h1><%= flash[:notice] %></h1><br>
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:power_name, "Search for:") %>
   <%= text_field_tag(:power_name) %>
@@ -14,3 +14,5 @@
     <br>
   <% end %>
 </ul>
+
+<h1><%= link_to "Create Your Own Heroine!", new_heroine_path %></h1>

@@ -1,3 +1,4 @@
+<p><%= link_to "Back", heroines_path %></p>
 <h1>New Heroine Creator</h1>
 <h2> <%= flash[:notice] %> <%= @heroine.errors.full_messages[0] if !@heroine.errors.nil? %> </h2>
 <%= form_for @heroine do |f|%>
